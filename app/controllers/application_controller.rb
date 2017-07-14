@@ -7,6 +7,10 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "restaurantreview"
   end
 
+  helpers do
+    
+  end
+
   get '/' do
     "Testing!"
   end
