@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if params[:username] == "" || params[:email] == "" || params[:password] == "" #if user inputs empty back to signup
       redirect to '/signup'
     else
-      @user = User.new(:username => params[:username], :email params[:email], :password params[:password])  #hash (params[:mode])
+      @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])  #hash (params[:mode])
       @user.save
       session[:user_id] = @user.id #set session for user by user id
       redirect to '/reviews' #to reviews controller

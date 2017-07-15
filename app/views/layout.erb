@@ -5,7 +5,7 @@
   </head>
   <body>
     <nav>
-      <!--<%if_logged_in?%>
+      <%if logged_in?%>
         <a href="/reviews/new">Create New Review</a>
         <a href="/logout">Logout</a>
         <p>Welcome, <%=current_user.username%></p>
@@ -13,10 +13,12 @@
       <%else%>
         <a href="/signup">Signup</a>
         <a href="/login">Login</a>
-      <%end%>-->
+      <%end%>
     </nav>
-    <div class = "container"
+    <div class = "container">
       <h1>My Restaurant Review</h1>
       <%= yield %> <!-- The layout.erb will render this html view throughout all pages via yield-->
+
+    </div>
   </body>
 </html>
