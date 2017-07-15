@@ -12,4 +12,10 @@ class UsersController < ApplicationController
     end
   end
 
+  post '/signup' do
+       @user = User.create(some_attribute: params[:some_attribute])  #or (params[:mode])
+       @user.save
+       redirect to '/users/#{@user.id}'
+  end
+
 end
