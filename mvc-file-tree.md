@@ -1,5 +1,3 @@
-https://github.com/jffernan/myrestaurant-review
-
 1.	Gemfile X
 2.	├── spec.md X
 3.	├── README.md X
@@ -14,22 +12,24 @@ https://github.com/jffernan/myrestaurant-review
 12.	│   │   └── review.rb X
 13.	│   │   └── user.rb X
 14.	│   └── views
-15.	├── 			users X
+15.	├── 			users
 16.	│   │   		└── signup.rb X
 17.	│   │   		└── login.rb X
-18.	│   │   		└── show.rb X
-19.	├── 			restaurants
-20.	│   │   		└── new.rb
-21.	│   │   		└── index.rb
-22.	│   │   		└── show.rb
-23.	│   │   		└── edit.rb
-24.	├── 			reviews
-25.	│   │   		└── edit.rb
-26.	│   │   		└── index.rb
-27.	│   │   		└── new.rb
-28.	│   │   		└── show.rb
-29.	│   		└── index.erb X
-30.	│   		└── layout.erb X
-31.	├── config X
-32.	│   └── environment.rb X
-33.	├── config.ru X
+18.	│   │   		└── error.rb X
+19.	│   │   		└── welcome.rb X
+20.	├── 			restaurants
+21.	│   │   		└── new.rb
+22.	│   │   		└── index.rb
+23.	│   │   		└── show.rb
+24.	│   │   		└── edit.rb
+25.	├── 			reviews
+26.	│   │   		└── new.rb
+27.	│   │   		└── edit.rb
+28.	│   │   		└── all.rb
+29.	│   │   		└── reviews.rb
+30.	│   │   		└── show.rb
+31.	│   		└── index.erb X
+32.	│   		└── layout.erb X
+33.	├── config X
+34.	│   └── environment.rb X
+35.	├── config.ru X
