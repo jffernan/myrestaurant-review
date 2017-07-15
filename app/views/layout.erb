@@ -8,8 +8,8 @@
       <%if logged_in?%>
         <a href="/reviews/new">Create New Review</a>
         <a href="/logout">Logout</a>
-        <p>Welcome, <%=current_user.username%></p>
-
+        <br></br>
+        <h3>Welcome, <%=current_user.username%></h3>
       <%else%>
         <a href="/signup">Signup</a>
         <a href="/login">Login</a>

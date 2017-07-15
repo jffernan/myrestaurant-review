@@ -10,24 +10,26 @@ https://github.com/jffernan/myrestaurant-review
 8.	│   │   └── reviews_controller.rb X
 9.	│   │   └── users_controller.rb X
 10.	│   ├── models X
-11.	│   │   └── restaurant.rb
-12.	│   │   └── review.rb
-13.	│   │   └── user.rb
+11.	│   │   └── restaurant.rb X
+12.	│   │   └── review.rb X
+13.	│   │   └── user.rb X
 14.	│   └── views
 15.	├── 			users
-16.	│   │   		└── restaurant.rb
-17.	│   │   		└── review.rb
-18.	│   │   		└── user.rb
+16.	│   │   		└── signup.rb X
+17.	│   │   		└── login.rb
+18.	│   │   		└── show.rb
 19.	├── 			restaurants
-20.	│   │   		└── restaurant.rb
-21.	│   │   		└── review.rb
-22.	│   │   		└── user.rb
-23.	├── 			reviews
-24.	│   │   		└── restaurant.rb
-25.	│   │   		└── review.rb
-26.	│   │   		└── user.rb
-27.	│   		└── index.erb X
-28.	│   		└── layout.erb X
-29.	├── config X
-30.	│   └── environment.rb X
-31.	├── config.ru X
+20.	│   │   		└── new.rb
+21.	│   │   		└── index.rb
+22.	│   │   		└── show.rb
+23.	│   │   		└── edit.rb
+24.	├── 			reviews
+25.	│   │   		└── edit.rb
+26.	│   │   		└── index.rb
+27.	│   │   		└── new.rb
+28.	│   │   		└── show.rb
+29.	│   		└── index.erb X
+30.	│   		└── layout.erb X
+31.	├── config X
+32.	│   └── environment.rb X
+33.	├── config.ru X
