@@ -8,14 +8,19 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/signup'
     else
-      redirect to '/reviews'
+      redirect to '/reviews' #to reviews controller
     end
   end
 
   post '/signup' do
-       @user = User.create(some_attribute: params[:some_attribute])  #or (params[:mode])
-       @user.save
-       redirect to '/users/#{@user.id}'
+    if params[:username] == "" || params[:email] == "" || params[:password] == "" #if user inputs empty back to signup
+      redirect to '/signup'
+    else
+      @user = User.new(:username => params[:username], :email params[:email], :password params[:password])  #hash (params[:mode])
+      @user.save
+      session[:user_id] = @user.id #set session for user by user id
+      redirect to '/reviews' #to reviews controller
+    end
   end
 
 end
