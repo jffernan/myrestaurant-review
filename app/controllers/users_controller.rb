@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
   get '/users/:slug' do #SLUG IN USER.RB
     @user = User.find_by_slug(params[:slug])
-    erb :'users/show'
+    erb :'users/welcome'
   end
 
   get '/signup' do
     if !logged_in?
       erb :'users/signup'
     else
-      redirect to '/reviews' #to reviews controller
+      erb :'users/welcome'
     end
   end
 
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])  #hash (params[:mode])
       @user.save
       session[:user_id] = @user.id #set session for user by user id
-      redirect to '/reviews' #to reviews controller
+      erb :'users/welcome'
     end
   end
 
@@ -27,10 +27,24 @@ class UsersController < ApplicationController
     erb :'users/login'
   end
 
+  post '/login' do
+    user = User.find_by(:username => params[:username]) #local variable to find if there is a user and match or not
+    if user && user.authenticate(params[:password]) #using method from bcrypt gemt
+      session[:user_id] = user.id #set session for user by user id
+      redirect to '/reviews' #to reviews controller
+    else
+      redirect to '/error' #if not a user and password not match, display error msg
+    end
+  end
+
+  get '/error' do
+    erb :'users/error'
+  end
+
   get '/logout' do
     if logged_in?
   		session.clear
-      redirect to '/' #????redirect to login????
+      redirect to '/login'
     else
   		redirect to '/'
     end

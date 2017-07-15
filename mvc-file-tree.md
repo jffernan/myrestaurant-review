@@ -14,10 +14,10 @@ https://github.com/jffernan/myrestaurant-review
 12.	│   │   └── review.rb X
 13.	│   │   └── user.rb X
 14.	│   └── views
-15.	├── 			users
+15.	├── 			users X
 16.	│   │   		└── signup.rb X
-17.	│   │   		└── login.rb
-18.	│   │   		└── show.rb
+17.	│   │   		└── login.rb X
+18.	│   │   		└── show.rb X
 19.	├── 			restaurants
 20.	│   │   		└── new.rb
 21.	│   │   		└── index.rb
