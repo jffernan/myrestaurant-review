@@ -16,19 +16,19 @@ class ReviewsController < ApplicationController
     end
   end
 
-  post '/reviews/new' do
+  post '/reviews' do
     if params[:rest_name].empty? || #If to test if user enters inputs
       params[:content].empty? ||
       params[:cuisine].empty? ||
       params[:rating] == ""
       redirect to '/reviews/new'
     end
-      @review = current_user.reviews.create#(user_id:current_user.id)
-      @review.rest_name = params[:rest_name]
-      @review.content = params[:content]
-      @review.cuisine = params[:cuisine]
-      @review.rating = params[:rating]
-      #@review.user_id = current_user.id
+      @review = Review.new(
+      rest_name: params[:rest_name],
+      content: params[:content],
+      cuisine: params[:cuisine],
+      rating: params[:rating],
+      user_id: current_user.id)
       @review.save
       redirect to '/reviews/#{@review.id}'
   end
