@@ -23,7 +23,7 @@
 23.	│   │   		└── show.rb
 24.	│   │   		└── edit.rb
 25.	├── 			reviews
-26.	│   │   		└── new.rb
+26.	│   │   		└── new.rb X
 27.	│   │   		└── edit.rb
 28.	│   │   		└── all.rb
 29.	│   │   		└── reviews.rb
