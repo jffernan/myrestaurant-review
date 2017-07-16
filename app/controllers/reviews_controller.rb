@@ -7,6 +7,8 @@ class ReviewsController < ApplicationController
     erb :'reviews/new'
   end
 
+  #if statement for empty input to refresh
+=begin
   post '/reviews' do
     @review = Review.new(:some_attribute params[:some_attribute])  #or (params[:mode])
     @review.save
@@ -40,5 +42,5 @@ class ReviewsController < ApplicationController
      @review.destroy
       redirect to '/reviews/#{@review.id}'
    end
-
+=end
   end
