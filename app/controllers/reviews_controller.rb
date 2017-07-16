@@ -17,13 +17,20 @@ class ReviewsController < ApplicationController
   end
 
   post '/reviews' do
-    if params[:rest_name].empty? || params[:content].empty? || params[:cuisine].empty? || params[:rating].empty?
+    if params[:rest_name].empty? || #If to test if user enters inputs
+      params[:content].empty? ||
+      params[:cuisine].empty? ||
+      params[:rating] == ""
       redirect to '/reviews/new'
-    else
-      @review = Review.new(rest_name: params[:rest_name], content:params[:content], cuisine: params[:cuisine], rating: params[:rating], user_id:current_user.id)
+    end
+      @review = Review.new
+      @review.rest_name = params[:rest_name]
+      @review.content = params[:content]
+      @review.cuisine = params[:cuisine]
+      @review.rating = params[:rating]
+      @review.user_id = current_user.id
       @review.save
       redirect to '/reviews/#{@review.id}'
-    end
   end
 
    get '/reviews/:id' do
@@ -60,7 +67,7 @@ class ReviewsController < ApplicationController
         end
     end
 
-    post '/reviews/:id/delete'#DELETE need HIDDEN button erb
+    delete '/reviews/:id/delete' do#DELETE need HIDDEN button erb
       if logged_in?
         @review = Review.find_by_id(params[:id])
         if @review.user_id == current_user.id #validate if user owns this review or not?
@@ -73,5 +80,4 @@ class ReviewsController < ApplicationController
         redirect to '/login'
       end
     end
-
 end

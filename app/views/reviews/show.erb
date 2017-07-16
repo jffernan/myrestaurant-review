@@ -1,8 +1,8 @@
-<h3>Here is your review of <%=review.rest_name%></h3>
+<h3>Here is your review of <%=@review.rest_name%></h3>
   <ul>
-    <li>Content: <%=review.content%></li>
-    <li>Cuisine: <%=review.cuisine%></li>
-    <li>Rating: <%=review.rating%></li>
+    <li>Content: <%=@review.content%></li>
+    <li>Cuisine: <%=@review.cuisine%></li>
+    <li>Rating: <%=@review.rating%></li>
   </ul>
   <p><a href="/reviews/<%=@review.id%>/edit" value="Edit Review">Edit Review</a></p>
   <form method="post" action="/reviews/<%=@review.id%>/delete">

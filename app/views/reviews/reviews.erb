@@ -1,6 +1,6 @@
 <h3>Here is a list of your reviews by restaurant names (LINKS):</h3>
 <ol>
-  <%@review.each do |review|%>
+  <%@reviews.each do |review|%>
   <li><a href="/reviews/<%=review.id%>"><%=review.rest_name%></a></li><!--LINK to restaurant-->
   <%end%>
 </ol>
