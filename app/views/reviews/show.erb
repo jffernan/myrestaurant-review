@@ -1,8 +1,13 @@
-<h3>Here are the review of RestaurantName</h3>
+<h3>Here is your review of <%=review.rest_name%></h3>
   <ul>
-    <li>Content: Blah! Blah!</li>
-    <li>Cuisine: American</li>
-    <li>Rating: Excellent</li>
+    <li>Content: <%=review.content%></li>
+    <li>Cuisine: <%=review.cuisine%></li>
+    <li>Rating: <%=review.rating%></li>
   </ul>
+  <p><a href="/reviews/<%=@review.id%>/edit" value="Edit Review">Edit Review</a></p>
+  <form method="post" action="/reviews/<%=@review.id%>/delete">
+   <input id="hidden" type="hidden" name="_method" value="DELETE">
+   <input type="submit" id='Delete Review' value="Delete Review">
+ </form>
 <br></br>
 <a href="/">Home</a>

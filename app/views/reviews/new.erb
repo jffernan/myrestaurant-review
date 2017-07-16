@@ -1,7 +1,7 @@
 <form action="/reviews/new" method="POST">
   <fieldset>
     <legend>Create New Restaurant Review Below:</legend>
-    <input type="text" name="rest_name" placeholder="Restaurant Name:"><br></br>
+    <input type="text" name="rest_name" id="rest_name" placeholder="Restaurant Name:"><br></br>
       <textarea id="content" name="content" placeholder="Enter your Review here:" rows="5" cols="98">
       </textarea>
       <br></br>
@@ -9,7 +9,6 @@
       Choose Rating for the restaurant from the following (4) choices:
       <input type="radio" name="rating" value="Excellent"><label for="Excellent"> Excellent</label>
       <input type="radio" name="rating" value="Good"><label for="Good"> Good</label>
-
       <input type="radio" name="rating" value="Average"><label for="Average"> Average</label>
       <input type="radio" name="rating" value="Poor"><label for="Poor"> Poor</label><br></br>
     <input type="submit" value="Save Review">
