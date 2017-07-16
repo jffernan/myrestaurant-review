@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
   end
 
   get '/reviews/new' do
-    erb :new
+    erb :'reviews/new'
   end
 
   post '/reviews' do
