@@ -1,11 +1,10 @@
-<form action="/reviews" method="POST">
+<form action="/reviews" method="post">
   <fieldset>
     <legend>Create New Restaurant Review Below:</legend>
-    <input type="text" name="rest_name" placeholder="Restaurant Name:"><br></br>
-      <textarea id="content" name="content" placeholder="Enter your review comments here:" rows="5" cols="98">
-      </textarea>
+    <input type="text" name="rest_name" id="rest_name" placeholder="Restaurant Name:"><br></br>
+      <textarea id="content" name="content" rows="5" cols="98" placeholder="Enter your review comments here:"></textarea>
       <br></br>
-    <input type="text" name="cuisine" placeholder="Cuisine:"><br></br>
+    <input type="text" name="cuisine" id="cuisine" placeholder="Cuisine:"><br></br>
       Choose Rating for the restaurant from the following (4) choices:
       <input type="radio" name="rating" value="Excellent"><label for="Excellent"> Excellent</label>
       <input type="radio" name="rating" value="Good"><label for="Good"> Good</label>

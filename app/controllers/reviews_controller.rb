@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
       rating: params[:rating],
       user_id: current_user.id)
       @review.save
-      redirect to '/reviews/#{@review.id}'
+      redirect to "/reviews/#{@review.id}"
   end
 
    get '/reviews/:id' do
@@ -55,13 +55,15 @@ class ReviewsController < ApplicationController
    end
 
    patch '/reviews/:id' do	#PATCH use Rack::MethodOverride
-     if params[:rest_name].empty? || params[:content].empty?#Test rest_name, cuisine, rating
-        redirect to '/reviews/#{params[:id]}/edit'
+     if params[:rest_name].empty? || params[:content].empty? || params[:cuisine].empty? || params[:rating] == ""
+        redirect to "/reviews/#{params[:id]}/edit"
      end
      @review = Review.find(params[:id])
         if @review && @review.user_id == current_user.id #Validate User if this his review
           @review.update(rest_name: params[:rest_name])
           @review.update(content: params[:content])
+          @review.update(cuisine: params[:cuisine])
+          @review.update(rating: params[:rating])
           @review.save
           redirect to '/reviews'
         end
