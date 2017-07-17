@@ -1,0 +1,10 @@
+<h3>Here is a list of all restaurant reviews posted by users:</h3>
+<ul>
+  <%@reviews.each do |review|%>
+  <li>
+    <a href="/reviews/<%=review.id%>"><%=review.rest_name%>
+    </a> by <%= review.user.username %>
+  </li>
+  <%end%>
+</ul>
+<a href="/">Home</a>

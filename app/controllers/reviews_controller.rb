@@ -23,12 +23,12 @@ class ReviewsController < ApplicationController
       params[:rating] == ""
       redirect to '/reviews/new'
     end
-      @review = Review.new(
-      rest_name: params[:rest_name],
-      content: params[:content],
-      cuisine: params[:cuisine],
-      rating: params[:rating],
-      user_id: current_user.id)
+      @review = Review.new
+      @review.rest_name = params[:rest_name]
+      @review.content = params[:content]
+      @review.cuisine = params[:cuisine]
+      @review.rating = params[:rating]
+      user_id = current_user.id)
       @review.save
       redirect to "/reviews/#{@review.id}"
   end
