@@ -1,12 +1,13 @@
 <form action="/reviews/<%=@review.id%>" method="post">
   <fieldset>
     <legend>Edit Your Restaurant Review Below:</legend>
-    <input type="text" name="rest_name" id="rest_name" placeholder="<%=@review.rest_name%>"><br></br>
+    <input type="text" name="rest_name" id="rest_name" value="<%=@review.rest_name%>"><br></br>
       <textarea id="content" name="content" rows="5" cols="98"><%=@review.content%>
       </textarea>
       <br></br>
-    <input type="text" name="cuisine" id="cuisine" placeholder="<%=@review.cuisine%>"><br></br>
-      Choose Rating for the restaurant from the following (4) choices:
+    <input type="text" name="cuisine" id="cuisine" value="<%=@review.cuisine%>"><br></br>
+      The current rating is: "<%=@review.rating%>." <!--NEED if statment to show or hide current rating-->
+      Choose Rating for the restaurant from the following (4) choices<!--"<%=@review.rating%>"-->
       <input type="radio" name="rating" value="Excellent"><label for="Excellent"> Excellent</label>
       <input type="radio" name="rating" value="Good"><label for="Good"> Good</label>
       <input type="radio" name="rating" value="Average"><label for="Average"> Average</label>

@@ -1,13 +1,16 @@
-<h3>Here is your review of <%=@review.rest_name%></h3>
+<h3>Here is the review of "<%=@review.rest_name%>":</h3>
   <ul>
     <li>Comments: <%=@review.content%></li>
     <li>Cuisine: <%=@review.cuisine%></li>
     <li>Rating: <%=@review.rating%></li>
+    <!--Which user posted this review?-->
   </ul>
   <p><a href="/reviews/<%=@review.id%>/edit" value="Edit Review">Edit Review</a></p>
+
   <form method="post" action="/reviews/<%=@review.id%>/delete">
    <input id="hidden" type="hidden" name="_method" value="DELETE">
    <input type="submit" id='Delete Review' value="Delete Review">
  </form>
 <br></br>
+<a href="/reviews">(S)ee all your reviews</a><br></br>
 <a href="/">Home</a>
