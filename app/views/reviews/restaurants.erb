@@ -1,12 +1,12 @@
-<h3>Here is a list of all restaurant reviews posted by users (Click on a 'link'):</h3>
+<h3>Here is a list of all restaurants reviewed (Click on a 'link'):</h3>
 <ul>
   <%@reviews.each do |review|%>
   <li>
     <a href="/reviews/<%=review.id%>"><%=review.rest_name%>
-    </a> by <%= review.user.username %>
+    </a>
   </li>
   <%end%>
 </ul>
 <a href="/reviews">(S)ee all your reviews</a><br></br>
-<a href="/reviews/restaurants">(S)ee all restaurants</a><br></br>
+<a href="/reviews/all">(S)ee all reviews posted by users</a><br></br>
 <a href="/">Home</a>
