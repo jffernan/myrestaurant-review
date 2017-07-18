@@ -2,17 +2,17 @@
 2.	├── spec.md X
 3.	├── README.md X
 4.	├── app
-5.	│   ├── controllers
+5.	│   ├── controllers X
 6.	│   │   └── application_controller.rb X
 7.	│   │   └── restaurants_controller.rb
 8.	│   │   └── reviews_controller.rb X
 9.	│   │   └── users_controller.rb X
 10.	│   ├── models X
-11.	│   │   └── restaurant.rb X
+11.	│   │   └── restaurant.rb
 12.	│   │   └── review.rb X
 13.	│   │   └── user.rb X
 14.	│   └── views
-15.	├── 			users
+15.	├── 			users X
 16.	│   │   		└── signup.rb X
 17.	│   │   		└── login.rb X
 18.	│   │   		└── error.rb X
@@ -22,7 +22,7 @@
 22.	│   │   		└── index.rb
 23.	│   │   		└── show.rb
 24.	│   │   		└── edit.rb
-25.	├── 			reviews
+25.	├── 			reviews X
 26.	│   │   		└── new.rb X
 27.	│   │   		└── edit.rb X
 28.	│   │   		└── all.rb X
