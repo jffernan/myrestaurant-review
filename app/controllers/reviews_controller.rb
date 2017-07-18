@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   get '/reviews' do
     if logged_in?
       @reviews = current_user.reviews.all #show only logged_in user's reviews
+      @reviews = @reviews.sort{|a,b| a['rest_name'] <=> b['rest_name']} #alphabetize list
       erb :'reviews/reviews'
     else
       redirect to '/login'
@@ -11,6 +12,7 @@ class ReviewsController < ApplicationController
   get '/reviews/all' do
     if logged_in?
       @reviews = Review.all #show all reviews by users
+      @reviews = @reviews.sort{|a,b| a['rest_name'] <=> b['rest_name']} #alphabetize list
       erb :'reviews/all'
     else
       redirect to '/login'
