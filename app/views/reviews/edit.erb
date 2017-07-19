@@ -6,13 +6,13 @@
       </textarea>
       <br></br>
     <input type="text" name="cuisine" id="cuisine" value="<%=@review.cuisine%>"><br></br>
-      The current rating is: "<%=@review.rating%>." <!--NEED if statment to show or hide current rating-->
-      Choose Rating for the restaurant from the following (4) choices<!--"<%=@review.rating%>"-->
+      Your current rating is "<%=@review.rating%>."</br><!--NEED if statment to show or hide current rating-->
+      Please choose Rating from the following (4) choices<!--"<%=@review.rating%>"-->
       <input type="radio" name="rating" value="Excellent"><label for="Excellent"> Excellent</label>
       <input type="radio" name="rating" value="Good"><label for="Good"> Good</label>
       <input type="radio" name="rating" value="Average"><label for="Average"> Average</label>
       <input type="radio" name="rating" value="Poor"><label for="Poor"> Poor</label><br></br>
-    <input type="submit" id="submit" value="Edit Review">
+    <input type="submit" id="submit" value="Save Review">
   </fieldset>
   <input type="hidden" id ="hidden" name="_method" value="PATCH">
 </form><br></br>
