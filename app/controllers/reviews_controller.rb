@@ -1,18 +1,21 @@
 class ReviewsController < ApplicationController
+
   get '/reviews' do
     if logged_in?
-      @reviews = current_user.reviews.all #show only logged_in user's reviews
-      @reviews = @reviews.sort{|a,b| a['rest_name'] <=> b['rest_name']} #alphabetize list
-      erb :'reviews/reviews'
+      @reviews = current_user.reviews.all #show only logged_in CURRENT user's reviews
+      #@reviews = @reviews.sort{|a,b| a['rest_name'] <=> b['rest_name']} #alphabetize list
+      @reviews = @reviews.alphabetical_order
+      erb :'reviews/reviews' #SELECT rest_name FROM reviews ORDER BY rest_name ASC;
     else
-      redirect to '/login'
+      redirect to '/login' #Review.order(rest_name: :asc)
     end
   end
 
   get '/reviews/all' do
     if logged_in?
       @reviews = Review.all #show all reviews by users
-      @reviews = @reviews.sort{|a,b| a['rest_name'] <=> b['rest_name']} #alphabetize list
+      #@reviews = @reviews.sort{|a,b| a['rest_name'] <=> b['rest_name']} #alphabetize list
+      @reviews = @reviews.alphabetical_order
       erb :'reviews/all'
     else
       redirect to '/login'
@@ -22,7 +25,7 @@ class ReviewsController < ApplicationController
   get '/reviews/restaurants' do
     if logged_in?
       @reviews = Review.all #show all reviews by users
-      @reviews = @reviews.sort{|a,b| a['rest_name'] <=> b['rest_name']} #alphabetize list
+      @reviews = @reviews.alphabetical_order
       erb :'reviews/restaurants'
     else
       redirect to '/login'
