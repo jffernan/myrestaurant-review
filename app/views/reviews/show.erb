@@ -3,12 +3,12 @@
   <li>Comments: <%= @review.content %></li>
   <li>Cuisine: <%= @review.cuisine %></li>
   <li>Rating: <%= @review.rating %></li>
-<% if current_user != @review.user %>
+<% if current_user != @review.user %> <!--show only another's username-->
   <li>Reviewed by: <%= @review.user.username %></li>
 <% end %>
 </ul>
 
-<% if current_user == @review.user %>
+<% if current_user == @review.user %><!--don't show edit & delete if review belongs to user-->
 
     <a href="/reviews/<%= @review.id %>/edit" value="Edit Review">Edit Review</a>
     <br></br>
