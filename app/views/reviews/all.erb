@@ -3,7 +3,12 @@
   <%@reviews.each do |review|%>
   <li>
     <a href="/reviews/<%=review.id%>"><%=review.rest_name%>
-    </a> by <%= review.user.username %>
+    </a> by
+    <% if current_user == review.user %>
+      you
+    <% else %>
+      <%= review.user.username %>
+    <% end %>
   </li>
   <%end%>
 </ul>

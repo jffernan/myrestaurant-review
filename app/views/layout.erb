@@ -9,7 +9,7 @@
         <a href="/reviews/new">(C)reate new review</a>
         <a href="/reviews">(R)ead review</a>
         <a href="/logout">Logout</a>
-        <h3>Welcome, <%=current_user.username%>!</h3>
+        <h3>Welcome, <%=current_user.username.upcase_first%>!</h3> <!--capitalize first letter of name-->
       <%else%>
         <a href="/signup">Signup</a>
         <a href="/login">Login</a>
