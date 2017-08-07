@@ -7,5 +7,4 @@ end
 use Rack::MethodOverride
 use UsersController
 use ReviewsController
-use RestaurantsController
 run ApplicationController
