@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
     if params[:rest_name].empty? || #If to test if user enters inputs
       params[:content].empty? ||
       params[:cuisine].empty? ||
-      params[:rating] == ""
+      params[:rating] == "" #if checkbox not checked
       redirect to '/reviews/new'
     end
     @review = Review.new(
@@ -75,7 +75,10 @@ get '/reviews/:id/edit' do
 end
 
    patch '/reviews/:id' do	#PATCH use Rack::MethodOverride
-     if params[:rest_name].empty? || params[:content].empty? || params[:cuisine].empty? || params[:rating] == ""
+     if params[:rest_name].empty? ||
+       params[:content].empty? ||
+       params[:cuisine].empty? ||
+       params[:rating].empty?
         redirect to "/reviews/#{params[:id]}/edit"
      end
      @review = Review.find_by_id(params[:id])
